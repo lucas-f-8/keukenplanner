@@ -1,0 +1,168 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+model-viewer {
+    width: 100%;
+    height: 100%;
+}
+
+#overlay {
+    position: absolute;
+    z-index: 99;
+    left: 5%;
+    top: 10%;
+    background-color: rgba(250, 250, 250, .9);
+    box-shadow: 0 0 10px rgba(200, 200, 200, .8);
+    border-radius: 20px;
+    width: 35%;
+    height: 80%;
+    overflow: hidden;
+}
+
+#overlayheader {
+    cursor: grab;
+    height: 7%;
+    width: 100%;
+    background-color: rgba(230, 230, 230, .4);
+    box-shadow: 0 7px 10px rgba(200, 200, 200, .4);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#overlayheader:active {
+  cursor: grabbing;
+}
+
+#overlay-content {
+    height: 93%;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+#text-content {
+    margin: 3%;
+    color: #333;
+    opacity: 80%;
+}
+
+.materialen-tekst {
+    margin: 3%;
+    font-size: 23px;
+    font-weight: 600;
+    color: #333;
+}
+
+.materialen {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 5px;
+}
+
+/*.materialen img {
+    width: calc(90% / 5);
+    height: auto;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .1s;
+    box-sizing: border-box;
+    border: solid 3px transparent;
+    padding: 2px;
+}*/
+
+.materiaal-wrapper {
+    border: 4px solid transparent;
+    padding: 2px;
+    margin: 2px;
+    border-radius: 7px;
+    box-sizing: border-box;
+    transition: 0.1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*.materialen img.active {
+    transform: scale(1.25);
+    border: solid 3px grey;
+    padding: 2px;
+}*/
+
+.materiaal-wrapper.active {
+    border-color: grey;
+    transform: scale(1.1);
+}
+
+.materiaal-img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    display: block;
+    cursor: pointer;
+}
+
+#overlay.offscreen-horizontal,
+#overlay.offscreen-vertical {
+    width: 10vh;
+    height: 10vh;
+    left: 0;
+}
+
+#overlay.offscreen-horizontal #overlay-content,
+#overlay.offscreen-vertical #overlay-content {
+    display: none;
+}
+
+#overlay.offscreen-horizontal #overlayheader,
+#overlay.offscreen-vertical #overlayheader {
+    width: 100%;
+    height: 100%;
+}
+
+#materiaalmannetje-container {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+
+#materiaalmannetje, .materiaalmannetje {
+    width: 50%;
+    height: auto;
+    margin: 25px 5px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+
+#kast-materialen,
+#keukenblad-materialen {
+    flex: 0 0 auto;
+}
+
+.materiaal-wrapper .active-icon {
+    position: absolute;
+    top: -49px;
+    right: -20px;
+    width: 50px;
+    height: auto;
+    display: none; /* standaard verborgen */
+    z-index: -1;
+}
+
+.materiaal-wrapper.active .active-icon {
+    display: block; /* toon alleen bij active */
+}

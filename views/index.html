@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keuken Planner 3D Viewer</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <model-viewer id="viewer"
+        src="/keuken.glb"
+        alt="Keuken"
+        shadow-intensity="1"
+        camera-controls
+        touch-action="pan-y"
+        max-camera-orbit="90deg 90deg" 
+        min-camera-orbit="-90deg 0deg">
+    </model-viewer>
+
+    <div id="overlay">
+        <div id="overlayheader"><p>---</p></div>
+        <div id="overlay-content">
+            <div id="kast-materialen">
+                <p class="materialen-tekst">Kastjes</p>
+
+                <div class="materialen">
+                     
+                </div>
+            </div>
+
+            <div id="keukenblad-materialen">
+                <p class="materialen-tekst">Keukenblad</p>
+
+                <div class="materialen">
+                     
+                </div>
+            </div>
+
+            <div id="materiaalmannetje-container">
+                <video width="50%" onclick="document.getElementById('materiaalmannetje-video').play()" id="materiaalmannetje-video" muted class="materiaalmannetje">
+                    <source src="materiaalmannetje-zwaait.mp4">
+                    <img id="materiaalmannetje" src="/materiaalmannetje-removebg.png">                
+                </video>
+                <p id="materiaalmannetje-tekst">Heb je advies nodig? Vraag het aan materiaalmannetje!</p>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="/dragElement.js"></script>
+    <script type="module" src="/eventSource.js"></script>
+    <script type="module" src="/textureScript.js"></script>
+  </body>
+</html>
